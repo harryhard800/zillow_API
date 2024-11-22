@@ -32,7 +32,7 @@ default_args = {
     'owner': 'airflow',
     'depends_on_past' : False,
     'start_date': datetime(2024,8,2),
-    'email' : ['vkkr800@gmail.com'],
+    'email' : [ 'mail id'],  # add you mail id through which you have the account on  rapid api
     'email_on_failure' : False,
     'email_on_retry' : False,
     'retries' : 2,
@@ -52,7 +52,7 @@ with DAG('Zillow_Analytics_DAG',
             )
         load_to_s3 = BashOperator(
             task_id = 'load_to_s3_bucket_zillowapibucket',
-            bash_command = 'aws s3 mv {{ti.xcom_pull("tsk_extract_zillow_data_var")[0]}} s3://zillow-api-bucket-1st/', 
+            bash_command = 'aws s3 mv {{ti.xcom_pull("tsk_extract_zillow_data_var")[0]}} s3://zillow-api-bucket-1st/',  # 'zillow-api-bucket-1st' s3 bucket name
         )
         
         is_file_in_s3_available = S3KeySensor(

@@ -28,7 +28,7 @@ def lambda_handler(event, context):
     for i in data['results']:
         f.append(i)
     df = pd.DataFrame(f)
-    selected_columns = manage
+    selected_columns = ['bathrooms','bedrooms','city','homeStatus','homeType','zipcode']  # these are column name please verify these with the file present in 1st bucket
     df = df[selected_columns]
     
     csv_data = df.to_csv(index= False)
