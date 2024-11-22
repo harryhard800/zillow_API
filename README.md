@@ -1,3 +1,5 @@
+This project if for analysing the data(taken from rapid api) using aws quicksights.
+
 First create account on rapid api inorder to get the data
 url = https://rapidapi.com/apimaker/api/zillow-com1
 got to search and look for zillow by sabri open it and select language and you will get the api endpoint [/search (Search for properties by neighborhood, city, or ZIP code)] also attached screenshots. click on test endpoint.
